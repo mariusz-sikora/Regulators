@@ -1,0 +1,10 @@
+set (OBJECTS_MODULE "")
+
+MESSAGE("OBJ")
+
+#include_directories(${PROJECT_SOURCE_DIR}/include)
+
+LIST_MODULE_SOURCE(OBJECTS_MODULE
+    Objects.c
+    FirstOrderObject.c
+)

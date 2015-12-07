@@ -1,0 +1,10 @@
+set (REGULATORS_MODULE "")
+
+MESSAGE("REG")
+
+#include_directories(${PROJECT_SOURCE_DIR}/include)
+
+LIST_MODULE_SOURCE(REGULATORS_MODULE
+    RegulatorP.c
+    RegulatorPI.c
+)

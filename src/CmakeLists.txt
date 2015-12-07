@@ -1,0 +1,28 @@
+cmake_minimum_required (VERSION 3.1.2)
+
+project (Regulators)
+
+MACRO (LIST_MODULE_SOURCE listname)
+    FOREACH (file ${ARGN})
+        LIST (APPEND ${listname} ${CMAKE_CURRENT_SOURCE_DIR}/${file})
+    ENDFOREACH()
+
+    SET (${listname} ${${listname}} PARENT_SCOPE)
+ENDMACRO()
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/lib/objects
+    ${PROJECT_SOURCE_DIR}/lib/regulators
+)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/lib/regulators)
+add_subdirectory(${PROJECT_SOURCE_DIR}/lib/objects)
+
+set (PROJECT_SRC
+     ${PROJECT_SOURCE_DIR}/main.c
+     ${OBJECTS_MODULE}
+     ${REGULATORS_MODULE}
+)
+
+add_executable(Regulators ${PROJECT_SRC})
