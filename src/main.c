@@ -12,6 +12,7 @@ int main(int argc, char *argv[]){
     RunObject(obj, 10);
     RegulatorPtr reg = CreateRegulatorP(10);
     RegulatorPtr reg2 = CreateRegulatorPI(10, 10);
+    RegulatorPtr reg3 = CreateRegulatorPI(10, 20);
 
     return 0;
 }
